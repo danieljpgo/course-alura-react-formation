@@ -1,0 +1,31 @@
+form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+}
+
+form input {
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  height: 21px;
+}
+
+form div {
+  display: grid;
+  place-items: center;
+}
+
+form button {
+  border-radius: 4px;
+  border: solid 2px #ffffff;
+  color: #ffffff;
+  background: transparent;
+  outline: transparent;
+  cursor: pointer;
+}
+
+form button:active {
+  color: #282c34;
+  background: #ffffff;
+  transition: background 0.3s, color 0.3s;
+}
