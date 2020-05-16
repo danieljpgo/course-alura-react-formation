@@ -8,27 +8,30 @@ const Header = () => (
     </div>
 )
 
-const Body = () => (
+const Body = ({ data }) => (
     <div className='body'>
-        <Row/>
-        <Row/>
-        <Row/>
+        {data.map((user, index) => (
+            <Row user={user}
+                key={index} />
+        ))}
     </div>
 )
 
-const Row = () => (
+const Row = ({ user }) => (
     <div className='row'>
-        <div>Josiane</div>
-        <div>24</div>
+        <div>{user.name}</div>
+        <div>{user.age}</div>
     </div>
-)
+);
 
 
 function Table(props) {
+    const { data } = props;
+
     return (
         <div className='table'>
             <Header />
-            <Body />
+            <Body data={data} />
         </div>
     );
 }
