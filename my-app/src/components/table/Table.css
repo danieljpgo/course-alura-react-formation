@@ -24,3 +24,24 @@
     place-items: center;
     grid-template-columns: repeat( auto-fit, minmax(60px, 1fr) );
 }
+
+.table .body .row button{
+    border-radius: 4px;
+    border: solid 2px #ffffff;
+    color: #ffffff;
+    background: transparent;
+    outline: transparent;
+    cursor: pointer;
+}
+
+.table .body .row button:active{ 
+    color: #282c34;
+    background: #ffffff;
+    transition: background .3s, color .3s;
+}
+
+/* .table .body .row button:active{ 
+    border-color: #ffffff;
+    color: #ffffff;
+    background: transparent;
+} */
