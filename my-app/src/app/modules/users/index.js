@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import './App.css';
-import Table from './components/table/Table';
-import mock from './utils/tableMock.json';
+import Table from './table';
+import mock from '../../../utils/tableMock.json';
 
 const DATA_DEFAULT = mock;
 
 function App() {
   const [data, setData] = useState(DATA_DEFAULT);
+
+  console.log('ai papai, render');
 
   function onDeleteUser(id) {
     setData(data.filter((user) => user.id !== id));
@@ -17,13 +18,11 @@ function App() {
   }
 
   return (
-    <div className='container'>
-      <Table
-        data={data}
-        onDeleteUser={({ id }) => onDeleteUser(id)}
-        onHandleSubmit={(user) => onHandleSubmit(user)}
-      />
-    </div>
+    <Table
+      data={data}
+      onDeleteUser={({ id }) => onDeleteUser(id)}
+      onHandleSubmit={(user) => onHandleSubmit(user)}
+    />
   );
 }
 
