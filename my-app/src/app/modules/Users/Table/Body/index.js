@@ -1,7 +1,7 @@
 import React from 'react';
 import Proptypes from 'prop-types';
-import Row from '../row';
-import Form from '../form';
+import Row from '../Row';
+import Form from '../Form';
 import './styles.css';
 
 const propTypes = {
