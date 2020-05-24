@@ -5,7 +5,7 @@ import './styles.css';
 const propTypes = {
   user: Proptypes.shape({
     name: Proptypes.string,
-    age: Proptypes.string,
+    age: Proptypes.number,
     id: Proptypes.number,
   }),
   onDeleteUser: Proptypes.func.isRequired,

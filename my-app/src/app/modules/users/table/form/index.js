@@ -23,8 +23,13 @@ function Form(props) {
   }
 
   function onHandleSubmit() {
-    props.onHandleSubmit(form);
-    setForm(initState);
+    if (form.name !== '' || Number(form.age)) {
+      props.onHandleSubmit({ ...form, age: Number(form.age) });
+      console.log({ ...form, age: Number(form.age) });
+      setForm(initState);
+    } else {
+      alert('Invalid form');
+    }
   }
 
   return (
