@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import Proptypes from 'prop-types';
 import Body from './body';
 import './styles.css';
@@ -10,6 +10,8 @@ const Header = () => (
     <div>Actions</div>
   </div>
 );
+
+const MemoHeader = memo(Header);
 
 const propTypes = {
   data: Proptypes.arrayOf(
@@ -45,7 +47,7 @@ function Table(props) {
 
   return (
     <div className="table">
-      <Header />
+      <MemoHeader />
       <Body
         data={userData}
         onDeleteUser={onDeleteUser}
