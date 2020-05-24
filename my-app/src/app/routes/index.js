@@ -16,6 +16,11 @@ function Routes() {
               component={User}
             />
             <Route
+              path="/users"
+              exact
+              component={User}
+            />
+            <Route
               path="/info"
               component={Info}
             />
