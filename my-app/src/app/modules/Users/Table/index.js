@@ -1,7 +1,7 @@
 import React, { useEffect, useState, memo } from 'react';
 import { Link } from 'react-router-dom';
 import Proptypes from 'prop-types';
-import Body from './body';
+import Body from './Body';
 import './styles.css';
 
 const Header = () => (

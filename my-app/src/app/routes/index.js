@@ -1,21 +1,26 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import User from '../modules/users';
-import Info from '../modules/info';
+import User from '../modules/Users';
+import Info from '../modules/Info';
+import Navigation from '../common/layout/Navigation';
 
 function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route
-          path="/"
-          exact
-          component={User}
-        />
-        <Route
-          path="/info"
-          component={Info}
-        />
+        <Navigation>
+          <Switch>
+            <Route
+              path="/"
+              exact
+              component={User}
+            />
+            <Route
+              path="/info"
+              component={Info}
+            />
+          </Switch>
+        </Navigation>
       </Switch>
     </BrowserRouter>
   );
