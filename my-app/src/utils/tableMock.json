@@ -1,17 +1,17 @@
 [
     {
         "name": "Igor",
-        "age": "25",
+        "age": 25,
         "id": 1
     },
     {
         "name": "Renan",
-        "age": "22",
+        "age": 22,
         "id": 2
     },
     {
         "name": "Iago",
-        "age": "24",
+        "age": 24,
         "id": 3
     }
 ]
