@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Proptypes from 'prop-types';
 import Body from './body';
 import './styles.css';
@@ -15,22 +15,39 @@ const propTypes = {
   data: Proptypes.arrayOf(
     Proptypes.shape({
       name: Proptypes.string,
-      age: Proptypes.number,
+      age: Proptypes.string,
       id: Proptypes.number,
     }),
   ).isRequired,
-  onHandleSubmit: Proptypes.func.isRequired,
-  onDeleteUser: Proptypes.func.isRequired,
 };
 
+const userDataDefault = [];
+
 function Table(props) {
-  const { data, onDeleteUser, onHandleSubmit } = props;
+  const { data } = props;
+
+  const [userData, setUserData] = useState(userDataDefault);
+
+  useEffect(() => {
+    setUserData(data);
+  }, [data]);
+
+  function onDeleteUser(deleteUser) {
+    setUserData(userData.filter((user) => user.id !== deleteUser.id));
+  }
+
+  function onHandleSubmit(user) {
+    setUserData([...userData, {
+      ...user,
+      id: (userData.length > 0 && userData[userData.length - 1].id) + 1,
+    }]);
+  }
 
   return (
     <div className="table">
       <Header />
       <Body
-        data={data}
+        data={userData}
         onDeleteUser={onDeleteUser}
         onHandleSubmit={onHandleSubmit}
       />

@@ -5,14 +5,14 @@ import './styles.css';
 const propTypes = {
   user: Proptypes.shape({
     name: Proptypes.string,
-    age: Proptypes.number,
+    age: Proptypes.string,
     id: Proptypes.number,
   }),
   onDeleteUser: Proptypes.func.isRequired,
 };
 
 const defaultProps = {
-  user: { name: '', age: '', id: 'default' },
+  user: { name: '', age: '', id: 0 },
 };
 
 function Row(props) {
