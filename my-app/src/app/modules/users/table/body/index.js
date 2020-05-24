@@ -8,7 +8,7 @@ const propTypes = {
   data: Proptypes.arrayOf(
     Proptypes.shape({
       name: Proptypes.string,
-      age: Proptypes.number,
+      age: Proptypes.string,
       id: Proptypes.number,
     }),
   ).isRequired,
