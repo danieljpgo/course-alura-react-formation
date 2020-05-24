@@ -1,5 +1,6 @@
 import React from 'react';
 import PropType from 'prop-types';
+import LinkWrapper from '../../components/LinkWrapper';
 import './styles.css';
 
 const propTypes = {
@@ -16,7 +17,8 @@ function Navigation(props) {
           My App
         </div>
         <div className="wrapper">
-          <div>1</div>
+          <LinkWrapper to="/users">Users</LinkWrapper>
+          <LinkWrapper to="/info">Info</LinkWrapper>
         </div>
       </nav>
       <main>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState, memo } from 'react';
-import { Link } from 'react-router-dom';
 import Proptypes from 'prop-types';
 import Body from './Body';
 import './styles.css';
@@ -48,7 +47,6 @@ function Table(props) {
 
   return (
     <div className="table">
-      <Link to="/info"> Info </Link>
       <MemoHeader />
       <Body
         data={userData}

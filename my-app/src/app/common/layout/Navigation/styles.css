@@ -19,6 +19,9 @@ nav{
 
 nav .wrapper{
   padding: 12px 20px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
 }
 
 main{
