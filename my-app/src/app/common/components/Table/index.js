@@ -1,6 +1,6 @@
 import React, { useEffect, useState, memo } from 'react';
 import Body from './Body';
-import Api from '../../../common/services/api';
+import Api from '../../services/api';
 import './styles.css';
 
 const usersDefault = [];
