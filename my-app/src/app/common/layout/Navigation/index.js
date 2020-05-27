@@ -1,7 +1,7 @@
 import React from 'react';
 import PropType from 'prop-types';
 import LinkWrapper from '../../components/LinkWrapper';
-import './styles.css';
+import { Container, Content, Wrapper } from './styles';
 
 const propTypes = {
   children: PropType.node.isRequired,
@@ -11,20 +11,22 @@ function Navigation(props) {
   const { children } = props;
 
   return (
-    <div className="container">
+    <Container>
       <nav>
-        <div className="wrapper">
+        <Content>
           My App
-        </div>
-        <div className="wrapper">
+        </Content>
+        <Content>
           <LinkWrapper to="/users">Users</LinkWrapper>
           <LinkWrapper to="/info">Info</LinkWrapper>
-        </div>
+        </Content>
       </nav>
       <main>
-        { children }
+        <Wrapper>
+          { children }
+        </Wrapper>
       </main>
-    </div>
+    </Container>
   );
 }
 

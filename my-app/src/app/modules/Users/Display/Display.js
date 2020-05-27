@@ -1,23 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { motion } from 'framer-motion';
 import Api from '../../../common/services/api';
 import Row from './Row/Row';
+import { item, container } from './Animation';
 
-
-const useStyles = makeStyles(() => ({
-  container: {
-    display: 'grid',
-    width: '80vw',
-    maxWidth: '500px',
-  },
-}));
 
 const usersDefault = [];
 const endpoint = 'employees';
 
 function Display() {
   const [users, setUsers] = useState(usersDefault);
-  const classes = useStyles();
 
   useEffect(() => {
     Api.get(endpoint)
@@ -39,19 +31,29 @@ function Display() {
   }
 
   return (
-    <div className={classes.container}>
-      {
-        users === usersDefault
-          ? <div> Loading </div>
-          : users.map((user) => (
-            <Row
-              user={user}
+    users === usersDefault
+      ? <div> Loading </div>
+      : (
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="visible"
+        >
+          {users.map((user) => (
+            <motion.div
               key={user && user.id}
-              onDeleteUser={onDeleteUser}
-            />
-          ))
-      }
-    </div>
+              className="item"
+              variants={item}
+            >
+              <Row
+                user={user}
+                key={user && user.id}
+                onDeleteUser={onDeleteUser}
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+      )
   );
 }
 
