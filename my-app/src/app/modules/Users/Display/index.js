@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Api from '../../../common/services/api';
-import Row from './Row/Row';
-import { item, container } from './Animation';
+import Row from './Row';
+import { Container } from './styles';
+import { item, container } from './animation';
 
 
 const usersDefault = [];
@@ -34,25 +35,28 @@ function Display() {
     users === usersDefault
       ? <div> Loading </div>
       : (
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="visible"
-        >
-          {users.map((user) => (
-            <motion.div
-              key={user && user.id}
-              className="item"
-              variants={item}
-            >
-              <Row
-                user={user}
+        <Container>
+          <motion.div
+            className="display"
+            variants={container}
+            initial="hidden"
+            animate="visible"
+          >
+            {users.map((user) => (
+              <motion.div
                 key={user && user.id}
-                onDeleteUser={onDeleteUser}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
+                variants={item}
+              >
+                <Row
+                  user={user}
+                  key={user && user.id}
+                  onDeleteUser={onDeleteUser}
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+        </Container>
+
       )
   );
 }

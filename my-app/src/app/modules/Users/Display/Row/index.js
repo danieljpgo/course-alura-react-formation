@@ -2,16 +2,11 @@ import React from 'react';
 import Proptypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
-
+import { Container } from './styles';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
     margin: theme.spacing(1),
-  },
-  row: {
-    display: 'grid',
-    placeItems: 'center',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(30px, 1fr))',
   },
 }));
 
@@ -37,7 +32,7 @@ function Row(props) {
       elevation={4}
       className={classes.paper}
     >
-      <div className={classes.row}>
+      <Container>
         <div>{user && user.name}</div>
         <div>{user && user.age}</div>
         <button
@@ -46,7 +41,7 @@ function Row(props) {
         >
           remove
         </button>
-      </div>
+      </Container>
     </Paper>
   );
 }
