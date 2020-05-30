@@ -1,48 +1,52 @@
 import React from 'react';
 import Proptypes from 'prop-types';
-import Paper from '@material-ui/core/Paper';
-import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
 import { Container } from './styles';
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    margin: theme.spacing(1),
-  },
-}));
 
 const propTypes = {
   user: Proptypes.shape({
     name: Proptypes.string,
     age: Proptypes.string,
     id: Proptypes.number,
+    picture: Proptypes.string,
   }),
   onDeleteUser: Proptypes.func.isRequired,
 };
 
 const defaultProps = {
-  user: { name: '', age: '', id: 0 },
+  user: {
+    name: '', age: '', id: 0, picture: '',
+  },
 };
 
 function Row(props) {
   const { user, onDeleteUser } = props;
-  const classes = useStyles();
 
   return (
-    <Paper
-      elevation={4}
-      className={classes.paper}
-    >
-      <Container>
-        <div>{user && user.name}</div>
-        <div>{user && user.age}</div>
-        <button
-          type="button"
-          onClick={() => onDeleteUser(user)}
-        >
-          remove
-        </button>
-      </Container>
-    </Paper>
+    <Container>
+      <Card elevation={4}>
+        <CardHeader
+        //   avatar={(
+        //     // <Avatar
+        //     //   aria-label={user && user.name}
+        //     //   src={user && user.picture}
+        //     // >
+        //     //   R
+        //     // </Avatar>
+
+        // )}
+          title={(
+            <Typography variant="h6" component="h1">
+              {user && user.name}
+            </Typography>
+        )}
+          subheader={`${user && user.age} years old`}
+        />
+      </Card>
+    </Container>
   );
 }
 

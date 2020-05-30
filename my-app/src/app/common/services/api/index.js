@@ -1,5 +1,5 @@
 
-const endpoint = 'http://dummy.restapiexample.com/api/v1/';
+const endpoint = 'http://localhost:4200/';
 const headers = {
   'content-type': 'application/json',
 };

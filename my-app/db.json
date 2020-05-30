@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Josiane Rabelo",
+      "age": "24",
+      "picture": "https://i.picsum.photos/id/1011/5472/3648.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Igor Cesar",
+      "age": "25",
+      "picture": "https://i.picsum.photos/id/177/200/200.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Roberta Carolina",
+      "age": "25",
+      "picture": "https://i.picsum.photos/id/1005/5760/3840.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Renan Silva",
+      "age": "22",
+      "picture": "https://i.picsum.photos/id/1012/3973/2639.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Josiane Rabelo",
+      "age": "24",
+      "picture": "https://i.picsum.photos/id/1011/5472/3648.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Igor Cesar",
+      "age": "25",
+      "picture": "https://i.picsum.photos/id/177/200/200.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Roberta Carolina",
+      "age": "25",
+      "picture": "https://i.picsum.photos/id/1005/5760/3840.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Renan Silva",
+      "age": "22",
+      "picture": "https://i.picsum.photos/id/1012/3973/2639.jpg"
+    }
+  ]
+}
