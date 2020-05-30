@@ -36,7 +36,6 @@ function Row(props) {
         //     // >
         //     //   R
         //     // </Avatar>
-
         // )}
           title={(
             <Typography variant="h6" component="h1">
