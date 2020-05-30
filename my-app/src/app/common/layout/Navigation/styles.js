@@ -35,13 +35,13 @@ export const Wrapper = styled.div`
 `;
 
 Container.defaultProps = {
-  'data-id': 'Container',
+  'data-id': 'Navigation Container',
 };
 
 Content.defaultProps = {
-  'data-id': 'Content',
+  'data-id': 'Navigation Content',
 };
 
 Content.defaultProps = {
-  'data-id': 'Wrapper',
+  'data-id': 'Navigation Wrapper',
 };

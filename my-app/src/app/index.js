@@ -1,12 +1,12 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import Dark from './styles/themes/dark';
 import GlobalStyle from './styles/global';
 import Routes from './routes';
+import dark from './styles/themes/dark';
 
 function App() {
   return (
-    <ThemeProvider theme={Dark}>
+    <ThemeProvider theme={dark}>
       <GlobalStyle />
       <Routes />
     </ThemeProvider>

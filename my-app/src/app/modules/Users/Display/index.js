@@ -1,33 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Container } from './styles';
+import { item, container } from './animations';
 import Api from '../../../common/services/api';
 import Row from './Row';
-import { Container } from './styles';
-import { item, container } from './animation';
-
 
 const usersDefault = [];
-const endpoint = 'employees';
+const endpoint = 'users';
 
 function Display() {
   const [users, setUsers] = useState(usersDefault);
 
   useEffect(() => {
     Api.get(endpoint)
-      .then((employees) => {
-        const dataParse = employees && employees.data.map((employee) => ({
-          name: employee.employee_name,
-          age: Number(employee.employee_age),
-          id: Number(employee.id),
-        }));
-
-        setUsers(dataParse);
-      });
+      .then((data) => setUsers(data));
   }, []);
 
   function onDeleteUser(deleteUser) {
     setUsers(users.filter((user) => user.id !== deleteUser.id));
-    // Dummy rest api example dont's work with delete
     Api.delete('delete', deleteUser.id);
   }
 
@@ -56,7 +46,6 @@ function Display() {
             ))}
           </motion.div>
         </Container>
-
       )
   );
 }
