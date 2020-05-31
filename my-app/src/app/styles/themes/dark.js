@@ -17,4 +17,8 @@ export default {
   shapes: {
     borderRadius: (unit / 1.6),
   },
+
+  breakpoints: {
+    small: 576,
+  },
 };

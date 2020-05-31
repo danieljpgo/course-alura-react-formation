@@ -36,7 +36,7 @@ function Row(props) {
 
   return (
     <Container>
-      <Card elevation={4}>
+      <Card elevation={2}>
         <CardHeader
           avatar={renderAvatar(user)}
           title={renderText(user)}
