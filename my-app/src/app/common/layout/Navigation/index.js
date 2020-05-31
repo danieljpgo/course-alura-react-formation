@@ -3,6 +3,8 @@ import PropType from 'prop-types';
 import LinkWrapper from '../../components/LinkWrapper';
 import { Container, Content, Wrapper } from './styles';
 
+const title = 'Untitle';
+
 const propTypes = {
   children: PropType.node.isRequired,
 };
@@ -14,11 +16,11 @@ function Navigation(props) {
     <Container>
       <nav>
         <Content>
-          My App
+          {title}
         </Content>
         <Content>
-          <LinkWrapper to="/users">Users</LinkWrapper>
-          <LinkWrapper to="/admin">Admin</LinkWrapper>
+          <LinkWrapper to="/users">users</LinkWrapper>
+          <LinkWrapper to="/admin">admin</LinkWrapper>
         </Content>
       </nav>
       <main>

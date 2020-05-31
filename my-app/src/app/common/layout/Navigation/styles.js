@@ -32,6 +32,11 @@ export const Wrapper = styled.div`
     max-width: 980px; 
     width: 100%;
     margin: auto;
+    padding: 0 ${(props) => props.theme.unit * 2}px;
+    @media (max-width: ${(props) => props.theme.breakpoints.small}px) {
+      padding: 0 ${(props) => props.theme.unit}px;
+    }
+
 `;
 
 Container.defaultProps = {

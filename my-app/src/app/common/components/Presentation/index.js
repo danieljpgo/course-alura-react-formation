@@ -8,24 +8,35 @@ const propTypes = {
   children: PropTypes.node,
   elevation: PropTypes.number,
   title: PropTypes.string,
+  box: PropTypes.bool,
 };
 const defaultProps = {
   children: null,
-  elevation: 1,
+  elevation: 4,
   title: 'Untitled',
+  box: true,
 };
 
 function Presentation(props) {
-  const { children, elevation, title } = props;
+  const {
+    children,
+    box,
+    elevation,
+    title,
+  } = props;
+
   return (
     <Container>
       <Title>
         {title}
       </Title>
       <Content>
-        <Box elevation={elevation}>
-          {children}
-        </Box>
+        {
+          box
+            ? (<Box elevation={elevation}>{children}</Box>)
+            : children
+        }
+
       </Content>
     </Container>
   );

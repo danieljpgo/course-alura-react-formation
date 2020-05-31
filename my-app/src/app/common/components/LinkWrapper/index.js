@@ -11,8 +11,6 @@ const propTypes = {
 function LinkWrapper(props) {
   const { to, children } = props;
 
-  console.log(to);
-
   return (
     <NavLink
       className="link"
