@@ -18,7 +18,7 @@ function Navigation(props) {
         </Content>
         <Content>
           <LinkWrapper to="/users">Users</LinkWrapper>
-          <LinkWrapper to="/info">Info</LinkWrapper>
+          <LinkWrapper to="/admin">Admin</LinkWrapper>
         </Content>
       </nav>
       <main>

@@ -18,7 +18,7 @@ function Display() {
 
   function onDeleteUser(deleteUser) {
     setUsers(users.filter((user) => user.id !== deleteUser.id));
-    Api.delete('delete', deleteUser.id);
+    Api.delete(endpoint, deleteUser.id);
   }
 
   return (

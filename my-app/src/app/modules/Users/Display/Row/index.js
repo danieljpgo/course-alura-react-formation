@@ -12,15 +12,24 @@ const propTypes = {
     age: Proptypes.string,
     id: Proptypes.number,
     picture: Proptypes.string,
+    email: Proptypes.string,
   }),
   onDeleteUser: Proptypes.func.isRequired,
 };
 
 const defaultProps = {
   user: {
-    name: '', age: '', id: 0, picture: '',
+    name: '', age: '', id: 0, picture: '', email: '',
   },
 };
+
+const renderAvatar = (user) => (
+  <Avatar aria-label={user && user.name} src={user && user.picture}>R</Avatar>
+);
+
+const renderText = (user) => (
+  <Typography variant="h6" component="h1">{user && user.name}</Typography>
+);
 
 function Row(props) {
   const { user, onDeleteUser } = props;
@@ -29,20 +38,14 @@ function Row(props) {
     <Container>
       <Card elevation={4}>
         <CardHeader
-        //   avatar={(
-        //     // <Avatar
-        //     //   aria-label={user && user.name}
-        //     //   src={user && user.picture}
-        //     // >
-        //     //   R
-        //     // </Avatar>
-        // )}
-          title={(
-            <Typography variant="h6" component="h1">
-              {user && user.name}
-            </Typography>
-        )}
-          subheader={`${user && user.age} years old`}
+          avatar={renderAvatar(user)}
+          title={renderText(user)}
+          subheader={(
+            <div>
+              <div>{`${user && user.email}`}</div>
+              <div>{`${user && user.age} years old`}</div>
+            </div>
+          )}
         />
       </Card>
     </Container>
