@@ -9,5 +9,5 @@ export const Container = styled.div`
 `;
 
 Container.defaultProps = {
-  'data-id': 'Display',
+  'data-id': 'Display Container',
 };

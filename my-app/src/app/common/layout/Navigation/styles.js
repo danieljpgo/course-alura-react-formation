@@ -12,7 +12,7 @@ export const Container = styled.div`
         border-bottom: solid 2px #ffffff;
         max-width: 980px;
         width: 100%;
-        margin: auto;
+        margin: 0 auto ${(props) => props.theme.unit * 2}px auto ;
     }
 
     main{
@@ -42,6 +42,6 @@ Content.defaultProps = {
   'data-id': 'Navigation Content',
 };
 
-Content.defaultProps = {
+Wrapper.defaultProps = {
   'data-id': 'Navigation Wrapper',
 };

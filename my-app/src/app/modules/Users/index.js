@@ -4,13 +4,6 @@ import Display from './Display';
 function User() {
   return (
     <div>
-      {/* @TODO Criar um component para agrupar o conteudo + titulo */}
-      <div>
-        <div>
-          Formulario
-        </div>
-        Form
-      </div>
       <div>
         <div>
           Usuarios

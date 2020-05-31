@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import User from '../modules/Users';
 import Info from '../modules/Info';
 import Navigation from '../common/layout/Navigation';
+import Admin from '../modules/Admin';
 
 function Routes() {
   return (
@@ -23,6 +24,10 @@ function Routes() {
             <Route
               path="/info"
               component={Info}
+            />
+            <Route
+              path="/admin"
+              component={Admin}
             />
           </Switch>
         </Navigation>

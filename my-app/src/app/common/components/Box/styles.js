@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  .MuiPaper-root{
+    padding: ${(props) => props.theme.unit}px
+  }
   .MuiPaper-rounded{
     border-radius: ${(props) => props.theme.shapes.borderRadius}px;
-    .MuiAvatar-root{
-      height: 72px;
-      width: 72px;
-    }
   }
 `;
 
 Container.defaultProps = {
-  'data-id': 'Row Container',
+  'data-id': 'Box Container',
 };
